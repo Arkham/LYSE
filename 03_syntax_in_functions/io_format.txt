@@ -1,0 +1,18 @@
+1> io:format("~s!~n", ["Hello"]).
+Hello!
+ok
+2> io:format("~s~n", [<<"Hello">>]).
+Hello
+ok
+3> io:format("~p~n", [<<"Hello">>]).
+<<"Hello">>
+ok
+4> io:format("~~~n").
+~
+ok
+5> io:format("~f~n", [4.0]).
+4.000000
+ok
+6> io:format("~30f~n", [4.0]).
+                      4.000000
+ok
