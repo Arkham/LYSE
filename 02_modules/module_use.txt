@@ -1,0 +1,38 @@
+1> c(useless).
+{ok,useless}
+2> useless:add(7,2).
+9
+3> useless:hello().
+Hello world!
+ok
+4> useless:greet_and_add_two(6).
+Hello world!
+8
+5> useless:hello_mum().
+** exception error: undefined function useless:hello_mum/0
+6> c(useless, [debug_info, export_all]).
+{ok,useless}
+7> useless:hello().
+Hello world!
+ok
+8> c(useless, {hipe, o3}).
+{ok,useless}
+9> useless:hello().
+Hello world!
+ok
+
+1> useless:hello().
+Hello world!
+ok
+2> useless:module_info().
+[{exports,[{add,2},
+           {hello,0},
+           {greet_and_add_two,1},
+           {module_info,0},
+           {module_info,1}]},
+ {imports,[]},
+ {attributes,[{vsn,[180921090235081948913415047721144586174]}]},
+ {compile,[{options,[{hipe,o3}]},
+           {version,"4.9.4"},
+           {time,{2014,1,12,13,53,9}},
+           {source,"/Users/arkham/code/LYSE/02_modules/useless.erl"}]}]
