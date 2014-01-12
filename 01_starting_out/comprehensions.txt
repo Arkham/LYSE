@@ -1,0 +1,28 @@
+1> [2*N || N <- [1,2,3,4]].
+[2,4,6,8]
+2> [X || X <- [1,2,3,4,5,6,7,8,9,10], X rem 2 =:= 0].
+[2,4,6,8,10]
+
+3> RestaurantMenu = [{steak, 5.99}, {beet, 3.99}, {poutine, 3.50}, {kitten, 10.99}, {water, 0.10}].
+[{steak,5.99},
+ {beet,3.99},
+ {poutine,3.5},
+ {kitten,10.99},
+ {water,0.1}]
+4> [{Item, Price*1.07} || {Item, Price} <- RestaurantMenu, Price >= 3, Price =< 10].
+[{steak,6.409300000000001},{beet,4.2693},{poutine,3.745}]
+
+1> [{X, Y} || X <- [1,2], Y <- [2,3]].
+[{1,2},{1,3},{2,2},{2,3}]
+2> [X+Y || X <- [1,2], Y <- [2,3]].
+[3,4,4,5]
+
+3> Weather = [{toronto, rain}, {montreal, storm}, {london, fog}, {paris, sun}, {boston, fog}, {vancouver, snow}].
+[{toronto,rain},
+ {montreal,storm},
+ {london,fog},
+ {paris,sun},
+ {boston,fog},
+ {vancouver,snow}]
+4> FoggyPlaces = [X || {X, fog} <- Weather].
+[london,boston]

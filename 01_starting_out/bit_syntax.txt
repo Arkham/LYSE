@@ -1,0 +1,55 @@
+1> Color = 16#F09A29.
+15768105
+2> Pixel = <<Color:24>>.
+<<240,154,41>>
+
+3> Pixels = <<213,45,132,64,76,32,76,0,0,234,32,15>>.
+<<213,45,132,64,76,32,76,0,0,234,32,15>>
+4> <<Pix1, Pix2, Pix3, Pix4>> = Pixels.
+** exception error: no match of right hand side value <<213,45,132,64,76,32,76,0,0,234,32,15>>
+5> <<Pix1:24, Pix2:24, Pix3:24, Pix4:24>> = Pixels.
+<<213,45,132,64,76,32,76,0,0,234,32,15>>
+6> <<R:8, G:8, B:8>> = <<Pix1:24>>.
+<<213,45,132>>
+7> R.
+213
+
+8> <<R:8, Rest/binary>> = Pixels.
+<<213,45,132,64,76,32,76,0,0,234,32,15>>
+9> Rest.
+<<45,132,64,76,32,76,0,0,234,32,15>>
+
+1> <<X1/unsigned>> = <<-44>>, X1.
+212
+2> <<X2/signed>> = <<-44>>, X2.
+-44
+3> <<X3/integer-signed-little>> = <<-44>>, X3.
+-44
+4> <<N:8/unit:1>> = <<72>>, N.
+72
+5> <<N>> = <<72>>.
+<<"H">>
+6> <<N/integer>> = <<72>>.
+<<"H">>
+7> <<Y:4/little-unit:8>> = <<72,0,0,0>>.
+<<72,0,0,0>>
+8> Y.
+72
+9> <<Z:4/big-unit:8>> = <<72,0,0,0>>.
+<<72,0,0,0>>
+10> Z.
+1207959552
+
+1> 2#0010 = 2#0100 bsl 1.
+** exception error: no match of right hand side value 8
+2> 2#0010 = 2#0100 bsr 1.
+2
+3> 2#1000 = 2#0100 bsl 1.
+8
+4> 2#1111 = 2#0101 bor 2#1010.
+15
+5> <<SourcePort:16, DestinationPort:16,
+5> AckNumber:32,
+5> DataOffset:4, _Reserved:4, Flags:8, WindowSize:16,
+5> CheckSum: 16, UrgentPointer:16,
+5> Payload/binary>> = SomeBinary.

@@ -1,0 +1,12 @@
+1> atoms.
+atoms
+2> atoms_rule.
+atoms_rule
+3> atoms_rule@erlang.
+atoms_rule@erlang
+4> 'Atoms can be cheated!'.
+'Atoms can be cheated!'
+5> atom = 'atom'.
+atom
+6> atom = 'atomic'.
+** exception error: no match of right hand side value atomic

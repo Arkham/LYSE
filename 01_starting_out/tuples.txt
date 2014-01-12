@@ -1,0 +1,30 @@
+1> X = 10, Y = 4.
+4
+2> Point = {X,Y}.
+{10,4}
+3> f().
+ok
+
+4> Point = {5,4}.
+{5,4}
+5> {X,Y} = Point.
+{5,4}
+6> X.
+5
+7> {X,_} = Point.
+{5,4}
+
+8> {_,_} = {4,5}.
+{4,5}
+9> {_,_} = {4,5,6}.
+** exception error: no match of right hand side value {4,5,6}
+
+10> Temperature = 23.2.
+23.2
+11> PreciseTemperature = {celsius, 23.2}.
+{celsius,23.2}
+12> {kelvin, T} = PreciseTemperature.
+** exception error: no match of right hand side value {celsius,23.2}
+
+13> {point, {X,Y}}.
+{point,{5,4}}

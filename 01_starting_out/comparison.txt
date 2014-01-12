@@ -1,0 +1,44 @@
+1> true and false.
+false
+2> false or true.
+true
+3> true xor false.
+true
+4> not false.
+true
+5> not (true and true).
+false
+
+6> 5 =:= 5.
+true
+7> 5 =/= 5.
+false
+8> 5 =:= 5.0.
+false
+9> 5 == 5.0.
+true
+10> 5 /= 5.0.
+false
+
+11> 1 < 2.
+true
+12> 2 > 1.
+true
+13> 1 <= 2.
+* 1: syntax error before: '<='
+13> 1 =< 2.
+true
+14> 2 >= 1.
+true
+
+15> 5 + alpaca.
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  +/2
+        called as 5 + alpaca
+16> 5 =:= true.
+false
+
+17> 0 == false.
+false
+18> 1 < false.
+true
