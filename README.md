@@ -1,1 +1,1 @@
-My notes from Learn You a Erlang.
+My notes from Learn You Some Erlang.
