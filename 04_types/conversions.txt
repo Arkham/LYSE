@@ -1,0 +1,14 @@
+1> erlang:list_to_integer("52").
+52
+2> erlang:integer_to_list(52).
+"52"
+3> erlang:list_to_integer("52.45").
+** exception error: bad argument
+     in function  list_to_integer/1
+        called as list_to_integer("52.45")
+4> erlang:list_to_float("52.45").
+52.45
+5> erlang:list_to_bitstring("hi there").
+<<"hi there">>
+6> erlang:bitstring_to_list(<<"hi there">>).
+"hi there"
