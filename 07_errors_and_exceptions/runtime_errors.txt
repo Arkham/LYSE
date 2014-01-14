@@ -1,0 +1,40 @@
+1> lists:sort([1,2,3,4]).
+[1,2,3,4]
+2> lists:sort(fffff).
+** exception error: no function clause matching lists:sort(fffff) (lists.erl, line 465)
+
+3> case "unexpected_value" of
+3>   expected_value -> ok;
+3>   other_expected_value -> 'also ok'
+3> end.
+** exception error: no case clause matching "unexpected_value"
+
+4> if 2 > 4 -> ok;
+4>    0 > 1 -> ok
+4> end.
+** exception error: no true branch found when evaluating an if expression
+
+5> [X,Y] = {4,5}.
+** exception error: no match of right hand side value {4,5}
+
+6> erlang:binary_to_list("hello").
+** exception error: bad argument
+     in function  binary_to_list/1
+        called as binary_to_list("hello")
+
+7> lists:abba([1,2,3,4]).
+** exception error: undefined function lists:abba/1
+
+8> 5 + llama.
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  +/2
+        called as 5 + llama
+
+2> hhfuns:add(one, two).
+** exception error: bad function one
+     in function  hhfuns:add/2 (hhfuns.erl, line 8)
+
+1> F = fun(_) -> ok end.
+#Fun<erl_eval.6.80484245>
+2> F().
+** exception error: interpreted function with arity 1 called with no arguments

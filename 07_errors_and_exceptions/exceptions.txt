@@ -1,0 +1,13 @@
+1> F = fun(_) -> ok end.
+#Fun<erl_eval.6.80484245>
+2> F().
+** exception error: interpreted function with arity 1 called with no arguments
+
+3> erlang:error(badarith).
+** exception error: an error occurred when evaluating an arithmetic expression
+
+4> erlang:error(custom_error).
+** exception error: custom_error
+
+5> throw(permission_denied).
+** exception throw: permission_denied
