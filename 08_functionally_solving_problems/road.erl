@@ -1,10 +1,11 @@
 -module(road).
 -compile(export_all).
 
-main() ->
-  File = "road.txt",
-  {ok, Bin} = file:read_file(File),
-  optimal_path(parse_map(Bin)).
+main([FileName]) ->
+  {ok, Bin} = file:read_file(FileName),
+  Map = parse_map(Bin),
+  io:format("~p~n", [optimal_path(Map)]),
+  erlang:halt().
 
 parse_map(Bin) when is_binary(Bin) ->
   parse_map(binary_to_list(Bin));
@@ -24,9 +25,9 @@ group_vals([X,Y,Z|Rest], Acc) ->
 
 shortest_step({A,B,X}, {{DistA,PathA}, {DistB,PathB}}) ->
   OptA1 = {DistA + A, [{a,A}|PathA]},
-  OptA2 = {DistA + B + X, [{x,X}, {b,B}|PathB]},
+  OptA2 = {DistB + B + X, [{x,X}, {b,B}|PathB]},
   OptB1 = {DistB + B, [{b,B}|PathB]},
-  OptB2 = {DistB + A + X, [{x,X}, {a,A}|PathA]},
+  OptB2 = {DistA + A + X, [{x,X}, {a,A}|PathA]},
   {erlang:min(OptA1, OptA2), erlang:min(OptB1, OptB2)}.
 
 optimal_path(Map) ->
