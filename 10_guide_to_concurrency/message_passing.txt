@@ -1,0 +1,15 @@
+1> self().
+<0.32.0>
+2> exit(self()).
+** exception exit: <0.32.0>
+3> self().
+<0.35.0>
+4> self() ! hello.
+hello
+5> self() ! self() ! double.
+double
+6> flush().
+Shell got hello
+Shell got double
+Shell got double
+ok
