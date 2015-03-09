@@ -21,7 +21,7 @@ help_me(Animal) ->
   Talk = if Animal == cat -> "meow";
             Animal == cow -> "mooo";
             Animal == dog -> "bark";
-            Animal == dog -> "bark";
+            Animal == tree -> "bark";
             true -> "yadda yadda"
          end,
   {Animal, "says " ++ Talk ++ "!"}.
